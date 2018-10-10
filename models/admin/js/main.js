@@ -34,19 +34,22 @@ jQuery(document).ready(function($) {
 	// 	$('.user-menu').parent().toggleClass('open');
 	// });
 	$('#bootstrap-data-table-export').DataTable();
+	
+    /* My Jquery */
+     
+    $('.alert').delay(2000).fadeOut(1000, function () {
+        $(this).alert('close');
+    });
 
-	jQuery( '#vmap' ).vectorMap( {
-        map: 'world_en',
-        backgroundColor: null,
-        color: '#ffffff',
-        hoverOpacity: 0.7,
-        selectedColor: '#1de9b6',
-        enableZoom: true,
-        showTooltip: true,
-        values: sample_data,
-        scaleColors: [ '#1de9b6', '#03a9f5' ],
-        normalizeFunction: 'polynomial'
-    } );
+     $(document).on("click","#delete", function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+        bootbox.confirm("Are you want to delete!!", function(confirmed){
+            if (confirmed){
+                window.location.href = link;
+            };
+        });
+    });
 
 
 });
