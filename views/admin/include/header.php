@@ -67,7 +67,7 @@ session_start();
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-gear"></i>Admin Section</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sitemap"></i><a href="page-login.html">Access Penel</a></li>
+                            <li><i class="menu-icon fa fa-sitemap"></i><a href="views/admin/auth/user-access.php">Access Penel</a></li>
                             <li><i class="menu-icon fa fa-bolt"></i><a href="page-register.html">Site Config</a></li>                            
                         </ul>
                     </li>

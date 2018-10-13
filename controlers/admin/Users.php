@@ -128,15 +128,54 @@ class Users extends Connection
         }
     }
 
-    public function delete($id){
+    public function delete_bill_user($user_id){
         try {
 
-            $stmt = $this->con->prepare("DELETE FROM `fund` WHERE unique_id = :id"); //update table name
-            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-            $stmt->execute();
+            $stmt = $this->con->prepare("DELETE `users`,`billing` FROM `users` INNER JOIN `billing` ON `users`.`id` = `billing`.`user_id` WHERE `billing`.`user_id` = '$user_id'"); //update table name
+            $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->execute(); 
             if($stmt){
-                $_SESSION['delete'] = 'Data successfully Deleted !!';
-                header('location: index.php');
+                $_SESSION['delete_bill_user'] = 'Data successfully Deleted !!';
+                header('location:../../../admin/users/index.php');
+            }
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+    public function delete_user($id){
+        try {
+
+            $stmt = $this->con->prepare("DELETE FROM `users` WHERE `users`.`id` = :id"); //update table name
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->execute(); 
+            if($stmt){
+                $_SESSION['delete_user'] = 'Data successfully Deleted !!';
+                header('location:../../../admin/users/all-members.php');
+            }
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+
+     public function update(){
+        try {
+
+        $stmt = $this->con->prepare("UPDATE `banking`.`users` SET `name` = :name, `email` = :email, `phone` = :phone, `nid_number` = :nid_number, `address` = :address, `image` = :image WHERE `users`.`id` = :id;"); //update table name         
+        $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $stmt->bindValue(':phone', $this->phone, PDO::PARAM_STR);
+        $stmt->bindValue(':nid_number', $this->nid_number, PDO::PARAM_STR);
+        $stmt->bindValue(':address', $this->address, PDO::PARAM_STR);
+        $stmt->bindValue(':image', $this->image, PDO::PARAM_STR);        
+        $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $stmt->execute();           
+            if($stmt){
+                $_SESSION['update'] = 'Data successfully Updated !!';
+                header('location:../../../views/admin/users/all-members.php');
             }
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";

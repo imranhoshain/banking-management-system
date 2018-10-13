@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 	
     /* My Jquery */
      
-    $('.alert').delay(2000).fadeOut(1000, function () {
+    $('.alert').delay(5000).fadeOut(5000, function () {
         $(this).alert('close');
     });
 

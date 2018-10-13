@@ -13,6 +13,8 @@ class Auth extends Connection
     private $email;
     private $password;
     private $image;    
+    private $user_id;    
+    private $rule_id;    
     //Set Method
     public function set($data = array())
     {
@@ -32,6 +34,14 @@ class Auth extends Connection
         if (array_key_exists('image', $data)) {
             $this->image = $data['image'];
         }
+
+        if (array_key_exists('user_id', $data)) {
+            $this->user_id = $data['user_id'];
+        }
+
+        if (array_key_exists('rule_id', $data)) {
+            $this->rule_id = $data['rule_id'];
+        }
         
         return $this;
     }   
@@ -46,7 +56,7 @@ class Auth extends Connection
             $result = $stm->fetch(PDO::FETCH_ASSOC);            
 
             if(!empty($result['id'])){
-                $_SESSION['id'] = $result['id']; 
+                $_SESSION['supar_id'] = $result['id']; 
                 $_SESSION['email'] = $result['email'];             
                 $_SESSION['name'] = $result['name'];             
                 $_SESSION['image'] = $result['image'];                              
@@ -60,5 +70,72 @@ class Auth extends Connection
             die();
         }
      }
+
+     //All User show
+    public function supar_admin(){
+        try {
+
+            $stmt = $this->con->prepare("SELECT * FROM `supar_admin` WHERE id = '1'"); //update table name
+            
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+
+    public function rule()
+    {
+        try {            
+            $stmt = $this->con->prepare("SELECT * FROM `rule`"); //update table name
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);           
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+     public function rule_user()
+    {
+        try {            
+            $stmt = $this->con->prepare("SELECT rule_user.id, users.id, rule_user.user_id, rule_user.rule_id FROM users INNER JOIN rule_user ON users.id = rule_user.user_id"); //update table name                        
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);            
+            return $result;
+
+            if(!empty($result['id'])){
+                $_SESSION['rule_id'] = $result['id']; 
+                                                        
+                header('location:../../../index.php');
+            }          
+        }
+        
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+    public function user_rule_store()
+   {
+        try {            
+            $stmt = $this->con->prepare("UPDATE `rule_user` SET `user_id` = :user_id, `rule_id` = :rule_id WHERE `rule_user`.`id` = '1'");
+        $stmt->bindValue(':user_id', $this->user_id, PDO::PARAM_INT);
+        $stmt->bindValue(':rule_id', $this->rule_id, PDO::PARAM_INT);
+        $stmt->execute();           
+            if($stmt){
+                $_SESSION['rule_update'] = 'Data successfully Updated !!';
+                header('location: ../../../views/admin/auth/user-access.php');
+            }
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
      
 }

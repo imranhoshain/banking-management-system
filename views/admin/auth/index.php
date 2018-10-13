@@ -3,10 +3,10 @@ if(!isset($_SESSION)){
     session_start();
 }
 include_once '../../../vendor/autoload.php';
-if(isset($_POST['submit'])){
-    $auth = new \App\admin\auth\Auth();
-    $auth->set($_POST)->login();
-    $users = new \App\admin\Users();
+ $auth = new \App\admin\auth\Auth();
+ $users = new \App\admin\Users();
+if(isset($_POST['submit'])){   
+    $auth->set($_POST)->login();    
     $users->set($_POST)->login();
 }
 ?>
@@ -55,7 +55,7 @@ if(isset($_POST['submit'])){
                                 }
                             ?> 
                             <?php
-                               if(isset($_SESSION['user_insert'])){
+                               if(isset($_POST['insert'])){
                                     echo '<div class="alert alert-success">'
                                             .$_SESSION['user_insert'].
                                         '</div>';
@@ -131,11 +131,11 @@ if(isset($_POST['submit'])){
                                     </div>                                   
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">Phone Number <sup>*</sup></label>
-                                        <input type="num" required="1" name="phone" class="form-control" placeholder="Phone Number">
+                                        <input type="text" required="1" name="phone" class="form-control" placeholder="Phone Number">
                                     </div>                                    
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">NID Number <sup>*</sup></label>
-                                        <input type="num" required="1" name="nid_number" class="form-control" placeholder="NID Number">
+                                        <input type="text" required="1" name="nid_number" class="form-control" placeholder="NID Number">
                                     </div>                                                                       
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">Your Address <sup>*</sup></label>

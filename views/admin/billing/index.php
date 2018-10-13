@@ -1,9 +1,10 @@
 <?php
-session_start();
 include_once '../include/header.php';
 include_once '../../../vendor/autoload.php';
+$auth = new App\admin\auth\Auth();
 $billing = new App\admin\Billing();
 $billings = $billing->index();
+$rule_users = $auth->rule_user();                                    
 
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['filter'])){
         $filterData = $billing->filterData($_POST);
@@ -96,11 +97,20 @@ $billings = $billing->index();
                                     }?>
                                 </td>
                                 <td class="text-center">
-                                    <a href="views/admin/users/user-info.php/?id=<?php echo $single_bill['user_id']?>" class="text-success"><i class="fa fa-eye"></i></a>
-                                    <a href="" class="text-warning"><i class="fa fa-edit"></i></a>
-                                    <a href="" class="text-danger"><i class="fa fa-trash-o"></i></a>
-                                </td>
+                                    <a href="views/admin/users/user-info.php/?id=<?php echo $single_bill['user_id']?>" class="text-success"><i class="fa fa-eye"></i></a> 
 
+                                     <?php if(isset($_SESSION['id'])){ if((($_SESSION['id']) == ($rule_users['user_id'])) == (($rule_users['rule_id']) =='1')){?>        
+                                    <a href="views/admin/billing/edit-bill.php/?id=<?php echo $single_bill['id'];?>" class="text-warning"><i class="fa fa-edit"></i></a> <?php } else{
+                                            echo "";
+                                        }}
+                                    ?> 
+                                    <?php if(isset($_SESSION['id'])){ if((($_SESSION['id']) == ($rule_users['user_id'])) == (($rule_users['rule_id']) =='1')){?>  
+                                    <a href="views/admin/billing/delete.php/?id=<?php echo $single_bill['id'];?>" id="delete" class="text-danger"><i class="fa fa-trash-o"></i></a><?php }
+                                    else{
+                                            echo "";
+                                        }}
+                                    ?>
+                                </td>
                             </tr>
                             <?php } ?>
                         </tbody>
