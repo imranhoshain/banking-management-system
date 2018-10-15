@@ -4,7 +4,6 @@ include_once '../../../vendor/autoload.php';
 $users = new App\admin\Users();
 $user = $users->login(); 
 $user = $users->index();
-var_du
 ?>
 <div class="row">
 	<div class="breadcrumbs">

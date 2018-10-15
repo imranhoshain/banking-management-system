@@ -3,7 +3,7 @@ include_once '../include/header.php';
 include_once '../../../vendor/autoload.php';
 $users = new App\admin\Users();
 $user = $users->view($_GET['id']);
-if (($_SESSION['id']) == ($user['id'])){
+
 ?>
 <div class="row">
 	<div class="breadcrumbs">
@@ -86,5 +86,4 @@ if (($_SESSION['id']) == ($user['id'])){
 		</form>
 	</div>
 </div>
-<?php } ?>
 <?php include_once '../include/footer.php'; ?>

@@ -162,10 +162,7 @@ class Auth extends Connection
             $stmt = $this->con->prepare("SELECT * FROM `site_config`"); //update table name
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;       
-            if(!empty($result['id'])){                                         
-                $_SESSION['logo'] = $result['image'];               
-            }
+            return $result;
          }
         catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
@@ -183,7 +180,10 @@ class Auth extends Connection
             $stmt->bindValue(':image', $this->image, PDO::PARAM_STR);
             $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);           
+             if($stmt){
+                $_SESSION['config_update'] = 'Data successfully Updated !!';
+                header('location:../../../views/admin/auth/site-config.php');
+            }
         }
         catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 15, 2018 at 06:45 AM
+-- Generation Time: Oct 15, 2018 at 07:30 AM
 -- Server version: 10.0.36-MariaDB
 -- PHP Version: 5.6.30
 
@@ -46,7 +46,8 @@ CREATE TABLE `billing` (
 
 INSERT INTO `billing` (`id`, `share`, `month`, `year`, `paid`, `due`, `created_at`, `updated_at`, `user_id`) VALUES
 (1, 0, 'February', 2016, 5000, 200, '2018-10-09 11:11:27', '2018-10-13 16:30:49', 2),
-(8, 0, 'July', 2018, 5400, 200, '2018-10-11 14:17:21', '2018-10-13 12:01:27', 12);
+(8, 0, 'July', 2018, 5400, 200, '2018-10-11 14:17:21', '2018-10-13 12:01:27', 12),
+(9, 0, 'April', 2016, 18000, 0, '2018-10-15 07:27:37', '2018-10-15 07:29:08', 16);
 
 -- --------------------------------------------------------
 
@@ -109,7 +110,7 @@ CREATE TABLE `site_config` (
 --
 
 INSERT INTO `site_config` (`id`, `company_name`, `company_email`, `company_contact`, `image`, `create_at`, `update_at`) VALUES
-(1, 'Startup Landing Page For Your Product', 'mutualfriendsml@gmail.com', '01845720092', '75902049a5.png', '2018-10-13 00:00:01', '2018-10-15 10:47:22');
+(1, 'Startup Landing Page For Your Product', 'mutualfriendsml@gmail.com', '01845720092', '75902049a5.png', '2018-10-13 00:00:01', '2018-10-15 07:23:51');
 
 -- --------------------------------------------------------
 
@@ -154,9 +155,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `nid_number`, `address`, `image`) VALUES
-(2, 'Imran Hoshain', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', '1602565647', '2147483647', 'A-74, Bank Colony, DHaka', '50f26a5edd.jpg'),
+(2, 'Imran Hoshain', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', '01602565647', '19945879654863', 'A-74, Bank Colony, DHaka', '50f26a5edd.jpg'),
 (12, 'Solayman Hossain', 'solaymang3@gmail.com', '337990b7b877f6b27b4c03ec6a989923', '1680145879', '19952627205000022', 'A 82/4, Bank Colony, Savar, Dhaka', '25fd0ed2b2.jpg'),
-(15, 'Sakib Khan', 'new@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '00178954663', '19945876598745632', 'dhaka', '0317d64073.jpg'),
+(15, 'Sakib Khan', 'new@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '000178954663', '19945876598745632', 'Monipur,dhaka', '0317d64073.jpg'),
 (16, 'Jabed', 'jabed@gmail.com', '25f9e794323b453885f5181f1b624d0b', '0172569874', '1997456987456978', 'Monipur Dhaka', '5dd97198e9.jpg');
 
 --
@@ -210,7 +211,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `billing`
 --
 ALTER TABLE `billing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `rule`

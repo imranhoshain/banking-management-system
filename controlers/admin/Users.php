@@ -167,7 +167,7 @@ class Users extends Connection
      public function update(){
         try {
 
-        $stmt = $this->con->prepare("UPDATE `banking`.`users` SET `name` = :name, `email` = :email, `phone` = :phone, `nid_number` = :nid_number, `address` = :address, `image` = :image WHERE `users`.`id` = :id;"); //update table name         
+        $stmt = $this->con->prepare("UPDATE `users` SET `name` = :name, `email` = :email, `phone` = :phone, `nid_number` = :nid_number, `address` = :address, `image` = :image WHERE `users`.`id` = :id;"); //update table name         
         $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
         $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
         $stmt->bindValue(':phone', $this->phone, PDO::PARAM_STR);
