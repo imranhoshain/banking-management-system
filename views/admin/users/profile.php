@@ -3,6 +3,8 @@ include_once '../include/header.php';
 include_once '../../../vendor/autoload.php';    
 $users = new App\admin\Users();
 $user = $users->login(); 
+$user = $users->index();
+var_du
 ?>
 <div class="row">
 	<div class="breadcrumbs">
@@ -21,6 +23,9 @@ $user = $users->login();
 			<div class="card">
 				<div class="card-header">
 					<i class="fa fa-user"></i><strong class="card-title pl-2">Profile Card</strong>
+					<div class="update-user">
+					   <i class="fa fa-edit"></i><a href="views/admin/users/edit-form.php/?id=<?php echo $_SESSION['id'];?>"><strong class="card-title pl-2">Update</strong></a>
+					</div>
 				</div>
 				<div class="card-body">
 					<div class="mx-auto d-block">
@@ -47,13 +52,13 @@ $user = $users->login();
 									</td>
 								</tr>
 								<tr>
-									<td>Email</td>
+									<td>NID Number</td>
 									<td>
 										<?php if (isset ($_SESSION['user_nid_number'])){echo $_SESSION['user_nid_number'];} else{echo $_SESSION['user_nid_number']; } ?>
 									</td>
 								</tr>
 								<tr>
-									<td>Email</td>
+									<td>Address</td>
 									<td>
 										<?php if (isset ($_SESSION['user_address'])){echo $_SESSION['user_address'];} else{echo $_SESSION['user_address']; } ?>
 									</td>

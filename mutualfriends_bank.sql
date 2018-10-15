@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 15, 2018 at 11:40 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Host: localhost:3306
+-- Generation Time: Oct 15, 2018 at 06:45 AM
+-- Server version: 10.0.36-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `banking`
+-- Database: `mutualfriends_bank`
 --
 
 -- --------------------------------------------------------
@@ -156,7 +156,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `nid_number`, `address`, `image`) VALUES
 (2, 'Imran Hoshain', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', '1602565647', '2147483647', 'A-74, Bank Colony, DHaka', '50f26a5edd.jpg'),
 (12, 'Solayman Hossain', 'solaymang3@gmail.com', '337990b7b877f6b27b4c03ec6a989923', '1680145879', '19952627205000022', 'A 82/4, Bank Colony, Savar, Dhaka', '25fd0ed2b2.jpg'),
-(15, 'Sakib Khan', 'new@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '00178954663', '19945876598745632', 'dhaka', '0317d64073.jpg');
+(15, 'Sakib Khan', 'new@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '00178954663', '19945876598745632', 'dhaka', '0317d64073.jpg'),
+(16, 'Jabed', 'jabed@gmail.com', '25f9e794323b453885f5181f1b624d0b', '0172569874', '1997456987456978', 'Monipur Dhaka', '5dd97198e9.jpg');
 
 --
 -- Indexes for dumped tables
@@ -239,7 +240,7 @@ ALTER TABLE `supar_admin`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables

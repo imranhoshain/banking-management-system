@@ -1,0 +1,4 @@
+DB: mutualfriends_bank
+
+User: mutualfriends_bank
+Pass: (vg}jueX1cBi

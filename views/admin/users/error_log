@@ -1,0 +1,8 @@
+[15-Oct-2018 10:11:06 UTC] PHP Notice:  Undefined index: image in /home/mutualfriends/public_html/views/admin/include/header.php on line 97
+[15-Oct-2018 10:11:06 UTC] PHP Notice:  Undefined index: id in /home/mutualfriends/public_html/views/admin/include/header.php on line 101
+[15-Oct-2018 10:19:27 UTC] PHP Notice:  Undefined variable: single_user in /home/mutualfriends/public_html/views/admin/users/profile.php on line 25
+[15-Oct-2018 10:21:27 UTC] PHP Warning:  Use of undefined constant var_du - assumed 'var_du' (this will throw an Error in a future version of PHP) in /home/mutualfriends/public_html/views/admin/users/profile.php on line 7
+[15-Oct-2018 10:21:34 UTC] PHP Warning:  Use of undefined constant var_du - assumed 'var_du' (this will throw an Error in a future version of PHP) in /home/mutualfriends/public_html/views/admin/users/profile.php on line 7
+[15-Oct-2018 10:22:15 UTC] PHP Warning:  Use of undefined constant var_du - assumed 'var_du' (this will throw an Error in a future version of PHP) in /home/mutualfriends/public_html/views/admin/users/profile.php on line 7
+[15-Oct-2018 10:23:34 UTC] PHP Warning:  Use of undefined constant var_du - assumed 'var_du' (this will throw an Error in a future version of PHP) in /home/mutualfriends/public_html/views/admin/users/profile.php on line 7
+[15-Oct-2018 10:45:21 UTC] PHP Warning:  Use of undefined constant var_du - assumed 'var_du' (this will throw an Error in a future version of PHP) in /home/mutualfriends/public_html/views/admin/users/profile.php on line 7

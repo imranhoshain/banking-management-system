@@ -18,7 +18,7 @@ $site_config = $auth->site_config();
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Banking | Login Panel</title>
-        <base href="http://localhost/banking/">
+        <base href="http://mutualfriends.ml/">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="models/admin/css/bootstrap.min.css">
         <link rel="stylesheet" href="models/admin/css/font-awesome.min.css">
@@ -83,7 +83,7 @@ $site_config = $auth->site_config();
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                        <form action="" method="POST">
                             <div class="form-group">
                                 <label for="">User ID</label>
                                 <input type="text" name="email" required="1" class="form-control"  aria-describedby="emailHelp" placeholder="Enter User ID">

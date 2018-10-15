@@ -14,7 +14,7 @@ session_start();
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
     <title>Banking | Management System</title>
-    <base href="http://localhost/banking/">
+    <base href="http://mutualfriends.ml/">
     <?php
         if (!isset($_SESSION['email'])){
             echo "<script>  window.location ='views/admin/auth/index.php'</script>";
@@ -39,11 +39,7 @@ session_start();
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-<?php 
-include_once '../../../vendor/autoload.php';
-$auth = new App\admin\auth\Auth();
-$site_config = $auth->site_config();
-?>
+
 </head>
 <body>
     <aside id="left-panel" class="left-panel">
@@ -52,8 +48,8 @@ $site_config = $auth->site_config();
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="views/admin/users/index.php"><img src="uploads/<?php echo $site_config['image']?>" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="views/admin/users/index.php"><img src="uploads/<?php echo $site_config['image']?>" alt="Logo"></a>
+                <a class="navbar-brand" href="views/admin/users/index.php"><img src="uploads/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="views/admin/users/index.php"><img src="uploads/logo.png" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">

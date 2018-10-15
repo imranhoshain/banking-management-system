@@ -32,6 +32,14 @@ div#bootstrap-data-table-export_length {
     right: 0;
 }
 
+.update-user {
+    float: right;
+}
+
+.update-user a {
+    color: #000;
+}
+
 @import url(../css/animate.css);
 .gaugejs-wrap {
   position: relative;

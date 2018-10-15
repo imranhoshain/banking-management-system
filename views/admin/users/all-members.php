@@ -31,7 +31,6 @@ $rule_users = $auth->rule_user();
 								<th>Phone</th>
 								<th>NID Number</th>
 								<th>Address</th>
-								<th>Image</th>
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -47,13 +46,11 @@ $rule_users = $auth->rule_user();
 								<td>0<?php echo $single_user['phone']?></td>
 								<td><?php echo $single_user['nid_number']?></td>
 								<td><?php echo $single_user['address']?></td>
-								<td class="text-center"><img src="uploads/<?php echo $single_user['image']?>" alt="" style="height: 80px; width: 30%;"></td>
 								<td class="text-center">									
                             		<a href="views/admin/users/user-info.php/?id=<?php echo $single_user['id']?>" class="text-success"><i class="fa fa-eye"></i></a> 
 
                             		<?php if(isset($_SESSION['id'])){ if((($_SESSION['id']) == ($rule_users['user_id'])) == (($rule_users['rule_id']) =='1')){?>        
-                                    <a href="views/admin/users/edit-form.php/?id=<?php echo $single_user['id'];?>" class="text-warning"><i class="fa fa-edit"></i></a> <?php } else if(($_SESSION['id']) == ($single_user['id'])){?>
-                                    	<a href="views/admin/users/edit-form.php/?id=<?php echo $single_user['id'];?>" class="text-warning"><i class="fa fa-edit"></i></a><?php }
+                                    <a href="views/admin/users/edit-form.php/?id=<?php echo $single_user['id'];?>" class="text-warning"><i class="fa fa-edit"></i></a> <?php }
                                     else{
                                             echo "";
                                         }}
