@@ -63,7 +63,7 @@ $rule_users = $auth->rule_user();
                     </form>
                 </div>
                 <div class="card-body">
-                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>Serial</th>

@@ -40,6 +40,23 @@ $user = $users->login();
 									<td>
 										<?php if (isset ($_SESSION['user_email'])){echo $_SESSION['user_email'];} else{echo $_SESSION['email']; } ?>
 									</td>
+								</tr>
+								<tr>
+									<td>Phone</td>
+									<td>0<?php if (isset ($_SESSION['user_phone'])){echo $_SESSION['user_phone'];} else{echo $_SESSION['user_phone']; } ?>
+									</td>
+								</tr>
+								<tr>
+									<td>Email</td>
+									<td>
+										<?php if (isset ($_SESSION['user_nid_number'])){echo $_SESSION['user_nid_number'];} else{echo $_SESSION['user_nid_number']; } ?>
+									</td>
+								</tr>
+								<tr>
+									<td>Email</td>
+									<td>
+										<?php if (isset ($_SESSION['user_address'])){echo $_SESSION['user_address'];} else{echo $_SESSION['user_address']; } ?>
+									</td>
 								</tr>			
 								
 							</thead>

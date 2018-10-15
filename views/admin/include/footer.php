@@ -1,7 +1,11 @@
-			<!-- ################################## -->
+			<div class="footer-bottom">
+                <a href="views/admin/billing/add-bill.php" id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-plus"></i></a>         
+            </div>
+            <!-- ################################## -->
         </div> <!-- .content -->
     </div><!-- /#right-panel -->
     <!-- Right Panel -->
+
     <script src="models/admin/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="models/admin/js/popper.min.js"></script>
     <script src="models/admin/js/plugins.js"></script>
@@ -18,9 +22,7 @@
     <script src="models/admin/js/lib/data-table/buttons.print.min.js"></script>
     <script src="models/admin/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="models/admin/js/lib/data-table/datatables-init.js"></script>  
-    <!-- Datatable Js -->   
-       
-       
+    <!-- Datatable Js -->       
     <script src="models/admin/js/main.js"></script>
     <script src="models/admin/js/lib/chosen/chosen.jquery.min.js"></script>
 
@@ -35,10 +37,10 @@
     </script>
     <script>
         calc_total();
-        $(".bootstrap-data-table").on('change', function(){
+        $("#bootstrap-data-table").on('change', function(){
           var parent = $(this).closest('tr');
           var price  = parseFloat($('.paid',parent).text());
-          var choose = parseFloat($('.bootstrap-data-table',parent).val());
+          var choose = parseFloat($('#bootstrap-data-table',parent).val());
           $('.paid',parent).text(choose*price);
           calc_total();
         });
@@ -49,6 +51,6 @@
           });
           $('#sum').text(sum);
         }
-    </script>  
+    </script>
 </body>
 </html>

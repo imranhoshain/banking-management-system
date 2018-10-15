@@ -9,6 +9,7 @@ if(isset($_POST['submit'])){
     $auth->set($_POST)->login();    
     $users->set($_POST)->login();
 }
+$site_config = $auth->site_config();
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,8 +33,8 @@ if(isset($_POST['submit'])){
                     <div class="col-md-12">
                         <div class="launch-logo">
                             <!-- <a href="#"><i class="fa fa-rocket"></i>Launch</a> -->
-                            <img class="main-logo" src="uploads/main_logo.png" alt="Mutual Friends" />
-                            <img class="mobile-logo" src="uploads/mobile_logo.png" alt="Mutual Friends" />
+                            <img class="main-logo" src="uploads/<?php echo $site_config['image']?>" alt="Mutual Friends" />
+                            <img class="mobile-logo" src="uploads/<?php echo $site_config['image']?>" alt="Mutual Friends" />
                         </div>
                         <div class="launch-login">
                             <ul>
@@ -62,7 +63,7 @@ if(isset($_POST['submit'])){
                                     unset($_SESSION['user_insert']);
                                 }
                             ?>                             
-                            <h1>Mutual Friends Multipurpose Limited</h1>
+                            <h1><?php echo $site_config['company_name'] ?></h1>
                             <h4>We born to explore the whole world by our talent, so get ready!</h4>
                             <a href="#" class="btn" data-toggle="modal" data-target="#exampleModalCenter3">Contact Us</a>
                             <p>Unity is strength</p>
@@ -169,8 +170,8 @@ if(isset($_POST['submit'])){
                                 <h3>Contact us</h3>
                                 <h4>Have any questions? Send us a message.</h4>
                                 <ul>
-                                    <li><i class="fa fa-phone"></i> +8801845720092</li>
-                                    <li><i class="fa fa-envelope"></i> mutualfriendsml@gmail.com</li>
+                                    <li><i class="fa fa-phone"></i><?php echo $site_config['company_email'] ?></li>
+                                    <li><i class="fa fa-envelope"></i>+88<?php echo $site_config['company_contact'] ?></li>
                                 </ul>
                             </div>
                             <div class="form-group">

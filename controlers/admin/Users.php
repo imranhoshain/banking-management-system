@@ -55,7 +55,7 @@ class Users extends Connection
             $result = $stmt->execute(array(
                 ':name' => $this->name,
                 ':email' => $this->email,
-                ':password' => $this->password,
+                ':password' => md5($this->password),
                 ':phone' => $this->phone,
                 ':nid_number' => $this->nid_number,
                 ':address' => $this->address,
@@ -78,7 +78,7 @@ class Users extends Connection
 
             $stm =  $this->con->prepare("SELECT * FROM `users` WHERE email=:email AND password=:password");            
             $stm->bindValue(':email', $this->email, PDO::PARAM_STR);
-            $stm->bindValue(':password', $this->password, PDO::PARAM_STR);
+            $stm->bindValue(':password', md5($this->password), PDO::PARAM_STR);
             $stm->execute();
             $result = $stm->fetch(PDO::FETCH_ASSOC);            
 
@@ -86,6 +86,9 @@ class Users extends Connection
                 $_SESSION['id'] = $result['id'];         
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['user_name'] = $result['name'];                                            
+                $_SESSION['user_phone'] = $result['phone'];                                            
+                $_SESSION['user_nid_number'] = $result['nid_number'];                                     
+                $_SESSION['user_address'] = $result['address'];                                   
                 $_SESSION['user_image'] = $result['image'];            
                                
                 header('location:../../../views/admin/users/index.php');

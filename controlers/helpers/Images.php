@@ -38,4 +38,22 @@ class Images extends Connection
 
     }
 
+    public function config_image_delete($id){
+
+        try {
+
+            $stmt = $this->con->prepare("SELECT `image` FROM `site_config` WHERE id = :id"); //update table name
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
+            if(isset($data['image'])){
+                unlink('../../../uploads/'.$data['image']);
+            }
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+
+    }
+
 }

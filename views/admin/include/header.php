@@ -13,7 +13,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
-    <title>Banking | Admin Panel</title>
+    <title>Banking | Management System</title>
     <base href="http://localhost/banking/">
     <?php
         if (!isset($_SESSION['email'])){
@@ -39,7 +39,11 @@ session_start();
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
+<?php 
+include_once '../../../vendor/autoload.php';
+$auth = new App\admin\auth\Auth();
+$site_config = $auth->site_config();
+?>
 </head>
 <body>
     <aside id="left-panel" class="left-panel">
@@ -48,8 +52,8 @@ session_start();
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="uploads/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="uploads/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="views/admin/users/index.php"><img src="uploads/<?php echo $site_config['image']?>" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="views/admin/users/index.php"><img src="uploads/<?php echo $site_config['image']?>" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -68,7 +72,7 @@ session_start();
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-gear"></i>Admin Section</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-sitemap"></i><a href="views/admin/auth/user-access.php">Access Penel</a></li>
-                            <li><i class="menu-icon fa fa-bolt"></i><a href="page-register.html">Site Config</a></li>                            
+                            <li><i class="menu-icon fa fa-bolt"></i><a href="views/admin/auth/site-config.php">Site Config</a></li>                            
                         </ul>
                     </li>
                 </ul>

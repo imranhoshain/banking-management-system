@@ -3,6 +3,7 @@ include_once '../include/header.php';
 include_once '../../../vendor/autoload.php';
 $billings = new App\admin\Billing();
 $billing = $billings->single_view($_GET['id']);
+if (($_SESSION['id']) == ($billing['user_id'])){
 ?>
 <div class="row">
 	<div class="breadcrumbs">
@@ -89,4 +90,5 @@ $billing = $billings->single_view($_GET['id']);
 		</form>
 	</div>
 </div>
+<?php } ?>
 <?php include_once '../include/footer.php'; ?>

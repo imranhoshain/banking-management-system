@@ -21,8 +21,8 @@ $rule_users = $auth->rule_user();
                         }
                      ?> 
 				</div>
-				<div class="card-body">
-					<table id="bootstrap-data-table" class="table table-striped table-bordered">
+				<div class="card-body table-responsive">
+					<table id="bootstrap-data-table-export" class="table table-striped table-bordered">
 						<thead>
 							<tr>
 								<th>Serial</th>

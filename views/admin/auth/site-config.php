@@ -1,33 +1,33 @@
 <?php
 include_once '../include/header.php';
 include_once '../../../vendor/autoload.php';
-$users = new App\admin\Users();
-$user = $users->view($_GET['id']);
-if (($_SESSION['id']) == ($user['id'])){
+$auth = new App\admin\auth\Auth();
+$rule_users = $auth->rule_user();
+$site_config = $auth->site_config();
 ?>
 <div class="row">
 	<div class="breadcrumbs">
 		<div class="col-sm-4">
 			<div class="page-header float-left">
 				<div class="page-title">
-					<h1>Update User Information</h1>
+					<h1>Site Configaration</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<?php if(isset($_SESSION['id'])){ if((($_SESSION['id']) == ($rule_users['user_id'])) == (($rule_users['rule_id']) =='1')){?> 
 <div class="row">
 	<div class="col-md-6 offset-md-3">
-		<form action="views/admin/users/update.php" method="POST" enctype="multipart/form-data">
+		<form action="views/admin/auth/config-update.php" method="POST" enctype="multipart/form-data">
 			<div class="card border border-success" style="padding: 39px 0px 2px; margin-top: 42px">
 				<div class="form-group">
 					<div class="col col-md-12">
 						<div class="input-group">
 							<div class="input-group-addon"><i class="fa fa-user"></i></div>
-							<input type="text" name="name" value="<?php echo $user['name']; ?>" class="form-control">
-							<input type="hidden" name="id" value="<?php echo $user['id']?>" class="form-control">
-                            <input type="hidden" name="image" value="<?php echo $user['image']?>">
-
+							<input type="text" name="company_name" value="<?php echo $site_config['company_name']; ?>" class="form-control">
+							<input type="hidden" name="id" value="<?php echo $site_config['id']?>" class="form-control">
+                            <input type="hidden" name="image" value="<?php echo $site_config['image']?>">
 						</div>
 					</div>
 				</div>
@@ -35,45 +35,30 @@ if (($_SESSION['id']) == ($user['id'])){
 					<div class="col col-md-12">
 						<div class="input-group">
 							<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-							<input type="email" value="<?php echo $user['email']; ?>" class="form-control" name="email">
+							<input type="email" value="<?php echo $site_config['company_email']; ?>" class="form-control" name="company_email">
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col col-md-12">
 						<div class="input-group">
-							<div class="input-group-addon"><i class="fa fa-phone"></i></div>
-							<input type="text" value="0<?php echo $user['phone']; ?>" class="form-control" name="phone">
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col col-md-12">
-						<div class="input-group">
-							<div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
-							<input type="text" value="<?php echo $user['nid_number']; ?>" class="form-control" name="nid_number">
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col col-md-12">
-						<div class="input-group">
-							<div class="input-group-addon"><i class="fa fa-flag-o"></i></div>
-							<input type="text" value="<?php echo $user['address']; ?>" class="form-control" name="address">
+							<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+							<input type="text" value="<?php echo $site_config['company_contact']; ?>" class="form-control" name="company_contact">
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col col-md-12">
 						<div class="user-image text-center">
-							<img src="uploads/<?php echo $user['image']; ?>" alt="user-image" style="height: 200px; width: 200px;">
+							<img class="bg-dark" src="uploads/<?php echo $site_config['image']; ?>" alt="user-image" name="image" style="height: 200px; width: 200px;">
 						</div>
 						<div class="input-group">
 							<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
 							<input type="file" class="form-control" name="image">
 						</div>
 					</div>
-				</div>
+				</div>		
+						
 				<div class="card-footer">
 					<button class="btn btn-success btn-sm" type="submit" name="submit">
 					<i class="fa fa-dot-circle-o"></i> Submit
@@ -86,5 +71,20 @@ if (($_SESSION['id']) == ($user['id'])){
 		</form>
 	</div>
 </div>
-<?php } ?>
+<?php }else{?>
+
+<div class="row text-center">
+	<div class="col-md-6 offset-md-3">		
+		<div class="card border border-success" style="padding: 39px 40px;margin-top: 20px;">
+				
+			<h1>Its not your work!!!</h1>			
+			<h2>This Page for admin</h2>			
+			
+		</div>	
+	</div>
+</div>
+
+<?php }}?>
+
+
 <?php include_once '../include/footer.php'; ?>

@@ -11,6 +11,27 @@
 * Tags: html, themplate, Sufee-Admin
 --------------------------------------------------------- */
 /* Bootstrap */
+/* Datatable css */
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right !important;
+    margin-bottom: 29px !important;
+}
+div#bootstrap-data-table-export_length {
+    width: 30% !important;
+    float: left !important;
+}
+.dt-buttons.btn-group {
+    float: left !important;
+    width: 30% !important;
+}
+
+.footer-bottom a {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
 @import url(../css/animate.css);
 .gaugejs-wrap {
   position: relative;
