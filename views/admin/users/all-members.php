@@ -43,7 +43,7 @@ $rule_users = $auth->rule_user();
 								<td><?php echo $sl++ ?></td>
 								<td><?php echo $single_user['name']?></td>
 								<td><?php echo $single_user['email']?></td>
-								<td>0<?php echo $single_user['phone']?></td>
+								<td><?php echo $single_user['phone']?></td>
 								<td><?php echo $single_user['nid_number']?></td>
 								<td><?php echo $single_user['address']?></td>
 								<td class="text-center">									

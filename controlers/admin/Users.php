@@ -185,6 +185,23 @@ class Users extends Connection
             die();
         }
     }
+    
+     public function change_password(){
+        try {
+
+        $stmt = $this->con->prepare("UPDATE `users` SET `password` = :password WHERE `users`.`id` = :id;"); //update table name         
+        $stmt->bindValue(':password', md5($this->password), PDO::PARAM_STR);
+        $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $stmt->execute();           
+            if($stmt){
+                $_SESSION['password_update'] = 'Data successfully Updated !!';
+                //header('location:../../../views/admin/users/all-members.php');
+            }
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
 
 
     

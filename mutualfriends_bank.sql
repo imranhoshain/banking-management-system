@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 15, 2018 at 07:30 AM
+-- Generation Time: Oct 16, 2018 at 06:11 AM
 -- Server version: 10.0.36-MariaDB
 -- PHP Version: 5.6.30
 
@@ -157,8 +157,11 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `nid_number`, `address`, `image`) VALUES
 (2, 'Imran Hoshain', 'admin@gmail.com', '0192023a7bbd73250516f069df18b500', '01602565647', '19945879654863', 'A-74, Bank Colony, DHaka', '50f26a5edd.jpg'),
 (12, 'Solayman Hossain', 'solaymang3@gmail.com', '337990b7b877f6b27b4c03ec6a989923', '1680145879', '19952627205000022', 'A 82/4, Bank Colony, Savar, Dhaka', '25fd0ed2b2.jpg'),
-(15, 'Sakib Khan', 'new@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '000178954663', '19945876598745632', 'Monipur,dhaka', '0317d64073.jpg'),
-(16, 'Jabed', 'jabed@gmail.com', '25f9e794323b453885f5181f1b624d0b', '0172569874', '1997456987456978', 'Monipur Dhaka', '5dd97198e9.jpg');
+(15, 'Santanu Ray', 'new@gmail.com', '83b4ef5ae4bb360c96628aecda974200', '018856954455', '19775684566545455', 'A-74, Bank Colony, DHakasdfs', '097c4fddcf.jpg'),
+(16, 'Jabed', 'jabed@gmail.com', '25f9e794323b453885f5181f1b624d0b', '0172569874', '1997456987456978', 'Monipur Dhaka', '5dd97198e9.jpg'),
+(17, 'Solayman Hossian', 'solaymanict@gmail.com', '6ad1d24f02e3d6b0e69fbe70691002bd', '0001680795394', '19952026275000022', 'A-75/2, Bank Colony, Savar, Dhaka.', '622e1e9e60.jpg'),
+(18, 'Imran', 'i4u.imraan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '01789546987', '199369874569847', 'A-74, Bank Colony, Dhaka', 'b6e1c56d4b.jpg'),
+(19, 'Santanu Ray', 'iforuimran@gmail.com', 'c33367701511b4f6020ec61ded352059', '0191536987', '198856974566654', 'A-74, Bank Colony, Dhaka', '44a4c09cce.jpg');
 
 --
 -- Indexes for dumped tables
@@ -241,7 +244,7 @@ ALTER TABLE `supar_admin`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

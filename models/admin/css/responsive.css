@@ -205,6 +205,17 @@ sup {
     color: crimson;
 }
 
+.viewport-content > .forgot-password {
+    color: #000;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 400;
+    border-radius: 3px;
+    padding: 3px 14px;
+    transition: .3s;
+    margin-top: 6px;
+    outline: none;
+}
 /*// Extra small devices (portrait phones, less than 576px)*/
 
 @media (max-width: 575.98px) {

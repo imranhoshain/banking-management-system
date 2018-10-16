@@ -47,7 +47,7 @@ $user = $users->index();
 								</tr>
 								<tr>
 									<td>Phone</td>
-									<td>0<?php if (isset ($_SESSION['user_phone'])){echo $_SESSION['user_phone'];} else{echo $_SESSION['user_phone']; } ?>
+									<td><?php if (isset ($_SESSION['user_phone'])){echo $_SESSION['user_phone'];} else{echo $_SESSION['user_phone']; } ?>
 									</td>
 								</tr>
 								<tr>
@@ -67,7 +67,10 @@ $user = $users->index();
 						</table>
 					</div>
 				</div>
-			</div>			
+			</div>
+			<div class="card-footer text-center">
+					<a role="button" href="views/admin/users/change-password.php/?id=<?php echo $_SESSION['id'];?>" class="btn btn-outline-primary">Change Password</a>
+				</div>
 		</div>
 	</div>
 </div>

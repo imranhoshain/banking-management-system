@@ -1,0 +1,5 @@
+[16-Oct-2018 06:44:31 UTC] PHP Notice:  Undefined variable: message in /home/mutualfriends/public_html/views/admin/auth/send-password.php on line 23
+[16-Oct-2018 07:35:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mcrypt_encrypt() in /home/mutualfriends/public_html/views/admin/auth/send-password.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/mutualfriends/public_html/views/admin/auth/send-password.php on line 6

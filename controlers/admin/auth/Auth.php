@@ -190,5 +190,21 @@ class Auth extends Connection
             die();
         }
     }
+    
+        public function forgot_password(){
+        try {
+
+            $stm =  $this->con->prepare("SELECT * FROM `users` WHERE email = :email");    
+            $stm->bindValue(':email', $this->email, PDO::PARAM_STR);    
+            $stm->execute();
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+            return $result;
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+     }
      
 }

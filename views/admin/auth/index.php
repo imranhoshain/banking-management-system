@@ -99,6 +99,9 @@ $site_config = $auth->site_config();
                             </div>
                             <button type="submit" name="submit" class="btn signin-btn">LogIn</button>
                         </form>
+                        <div class="forgot-password">
+                              <a href="views/admin/auth/forgot-password.php">Forgot Password</a>
+                        </div>
                     </div>
                 </div>
             </div>
