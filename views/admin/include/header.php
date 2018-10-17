@@ -14,7 +14,7 @@ session_start();
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
     <title>Banking | Management System</title>
-    <base href="http://mutualfriends.ml/">
+    <base href="http://localhost/banking/">
     <?php
         if (!isset($_SESSION['email'])){
             echo "<script>  window.location ='views/admin/auth/index.php'</script>";

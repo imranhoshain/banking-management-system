@@ -16,7 +16,7 @@ $forgot_password = $auth->forgot_password();
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Banking | Forgot Password</title>
-		<base href="http://mutualfriends.ml/">
+		<base href="http://localhost/banking/">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="models/admin/css/bootstrap.min.css">
 		<link rel="stylesheet" href="models/admin/css/font-awesome.min.css">

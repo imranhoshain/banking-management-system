@@ -176,6 +176,31 @@ class Billing extends Connection
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
-    }          
+    } 
     
+    public function paid_amount()
+    {
+        try {            
+            $stmt = $this->con->prepare("SELECT SUM(paid) from billing;"); //update table name
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);            
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
+    
+    public function due_amount()
+    {
+        try {            
+            $stmt = $this->con->prepare("SELECT SUM(due) from billing;"); //update table name
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);            
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+    }
 }
