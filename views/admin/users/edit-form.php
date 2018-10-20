@@ -1,9 +1,9 @@
 <?php
 include_once '../include/header.php';
 include_once '../../../vendor/autoload.php';
+$auth = new App\admin\auth\Auth();
 $users = new App\admin\Users();
 $user = $users->view($_GET['id']);
-
 ?>
 <div class="row">
 	<div class="breadcrumbs">
